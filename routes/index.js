@@ -12,11 +12,20 @@
 // ```
 
 const router = require('express').Router();
-const User = require('../models/user.js')
+var bodyParser = require('body-parser')
 
 
+const User = require('../models/models.js')
+module.exports = router
 
-
+const redirect = (res) =>{
+    return () =>{
+        res.redirect('/users')
+    }
+}
+//saw this function in the video
+//not sure what it does so i've 
+//commented it out
 
 //READ
 router.get('/', (req, res, next) =>{
@@ -25,6 +34,11 @@ router.get('/', (req, res, next) =>{
         res.json(user)
     })
     .catch(next)
+})
+
+//get /user
+router.get('/user', (req, res, next) =>{
+    User.findOne()
 })
 
 //Create
@@ -51,7 +65,7 @@ router.put('/:id', (req, res, next) =>{
 
 //create award
 router.post('/:id/awards', (req, res, next) =>{   
-    User.generateReward(req.params.id)
+    User.prototype.generateReward(req.params.id)
     .then(redirect(res))
     .catch(next)
 
@@ -65,16 +79,9 @@ router.delete('/:id/awards/:id', (req, res, next) =>{
 })
 
 
-module.exports = router
+
+
+//
 
 
 
-
-// const redirect = (res) =>{
-//     return () =>{
-//         res.redirect('/users')
-//     }
-// }
-//saw this function in the video
-//not sure what it does so i've 
-//commented it out

@@ -1,29 +1,30 @@
 {
-  "name": "express-sequelize-enrichment",
+  "name": "react-intro",
   "version": "1.0.0",
-  "description": "## Goal",
+  "description": "baby react app",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
+    "build": "webpack -w",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mdnyc2017/express-sequelize-enrichment.git"
-  },
-  "author": "",
+  "author": "DAS",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/mdnyc2017/express-sequelize-enrichment/issues"
+  "devDependencies": {
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.7",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-register": "^6.18.0",
+    "webpack": "^1.13.3",
+    "webpack-dev-server": "^1.14.0"
   },
-  "homepage": "https://github.com/mdnyc2017/express-sequelize-enrichment#readme",
   "dependencies": {
+    "axios": "^0.16.2",
     "body-parser": "^1.18.2",
-    "express": "^4.16.1",
-    "morgan": "^1.9.0",
-    "nodemon": "^1.12.1",
-    "nunjucks": "^3.0.1",
     "pg": "^7.3.0",
-    "pg-hstore": "^2.3.2",
-    "sequelize": "^4.13.5"
+    "react": "^15.6.2",
+    "react-dom": "^15.4.0",
+    "sequelize": "^4.13.8"
   }
 }
